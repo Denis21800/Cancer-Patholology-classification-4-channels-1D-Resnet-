@@ -1,5 +1,5 @@
 
-Full description is given in the file 
+Full description is given in the file https://github.com/Denis21800/Cancer-Patholology-classification-4-channels-1D-Resnet-/blob/main/readme/readme_RES-CNN(4-channels%20of%20raw%20data).pdf 
 
 
 This pipeline can only be used with the Mongo DB installed. Follow the instructions to install Mongo DB https://docs.mongodb.com/manual/installation/
