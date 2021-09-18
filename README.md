@@ -1,5 +1,5 @@
 
-Full description is given in the file https://github.com/Denis21800/Pathology-classification_V2/blob/main/readme/readme.pdf
+Full description is given in the file 
 
 
 This pipeline can only be used with the Mongo DB installed. Follow the instructions to install Mongo DB https://docs.mongodb.com/manual/installation/
