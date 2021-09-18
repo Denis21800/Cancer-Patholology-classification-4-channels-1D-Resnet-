@@ -1,0 +1,61 @@
+{
+  "pipeline steps": ["load from db", "validate"],
+  "labels": {
+    "0": "Control",
+    "1": "Ovarian Cancer",
+    "2": "Breast Cancer",
+    "3": "Kidney Cancer",
+    "4": "Prostate Cancer",
+    "5": "Schizophrenia"
+  },
+  "db_type": "mongo",
+
+  "load from folder": {
+    "data folder": "/home/dp/Data/Cancer_Data/",
+    "validation": -1
+  },
+  "load from file": {
+    "file_path": ""
+  },
+
+  "preprocessing": {
+    "elliptic": true,
+    "contamination": 0.2,
+    "min-max_scale": true,
+    "rti_align": true,
+    "align_bound": 5000,
+    "align_step": 0.1,
+    "log": true,
+    "save_models": true,
+    "mm_model_path": "./models/preprocessing/outlier_detector.mkl",
+    "outlier_model_path": "./models/preprocessing/mm_scale.mkl"
+  },
+  "mongo_params": {
+    "host": "localhost",
+    "port": 27017,
+    "db_name": "cancer_data",
+    "col_name": "data_col"
+  },
+  "train model": {
+    "model_path": "./models/cancer_prediction.pth",
+    "model_type": "Resnet",
+    "n_epochs": 100,
+    "save_best_model": true
+  },
+  "test model": {
+    "model_path": "./models/cancer_prediction.pth",
+    "model_type": "Resnet",
+    "save_output": false,
+    "output_dir": "/home/dp/TMP/",
+    "cam_extractor": false,
+    "cam_layer": "layer4"
+  },
+  "logging": {
+    "logging_results": true,
+    "console": true,
+    "use_tensorboard": true,
+    "classification_report": true,
+    "confusion_matrix": true
+  }
+}
+

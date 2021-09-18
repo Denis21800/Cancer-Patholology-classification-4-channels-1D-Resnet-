@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Result tables</title>
+<body>
+<div class=page>
+
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  <h3>Results:</h3>
+  {% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+  {% endfor %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <form action="/show_data/" id="show_data_frm"  method = "POST" target="dummyframe" enctype = "multipart/form-data">
+       <div style="float:left"> <select name="comp_select" class="selectpicker form-control">
+               <option value="0"> Original data</option>
+               <option value="1">Cleaned data</option>
+               <option value="2">CAM</option>
+       </select>
+           <tr>
+       </div>
+        <div style="float:left">
+            <button id="load_original_btn" type="submit" class="btn btn-primary form-control">Show..</button>
+       </div>
+    </form>
+</div>
+</body>
